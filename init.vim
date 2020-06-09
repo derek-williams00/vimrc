@@ -13,6 +13,9 @@ Plug 'scrooloose/nerdTree'
 Plug 'bling/vim-airline'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-surround'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'junegunn/fzf', {'do': { -> fzf#install() }}
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 set number
@@ -84,6 +87,12 @@ nnoremap \m ddGp$i<CR><TAB><CR><ESC>xk
 nnoremap \c 0iclass<SPACE><ESC>A<SPACE>{<CR>public:<CR><TAB><CR><BS>private:<CR><TAB><CR><BS>};<ESC>3k
 nnoremap \h 0i#ifndef<SPACE><ESC>yyp0ldiwidefine<ESC>o<CR><CR><CR>#endif<ESC>2k
 nnoremap \f A<SPACE>{<CR><TAB><CR><BS>}<ESC>k
+
+nnoremap \t :term<CR>A
+
+nmap \gd <Plug>(coc-definition)
+nmap \gr <Plug>(coc-references)
+nnoremap <C-p> :GFiles<CR>
 
 nnoremap <C-J> <C-W>j
 nnoremap <C-K> <C-W>k
